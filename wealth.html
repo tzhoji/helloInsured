@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>TEAM HELLO</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    
+</head>
+<body>
+    <div class="mainwealth-page">
+
+        <div class="navbar">
+
+            <div class="title"></div>
+
+            <!-- sidebar -->
+            <div class="sidebar">
+                <label for="click">
+                    <div class="menu-icon">
+                        <div class="line line-1"></div>
+                        <div class="line line-2"></div>
+                        <div class="line line-3"></div>
+                    </div>
+                </label>
+            </div>
+
+            <!-- navigation -->
+            <div class="navigation">
+                <div class="navigation-header">
+                    <a href="./index.html"> 
+                        <img class="prumanage-icon" src="./Asset/PruManage_Icon@2x.png" alt="prumanage-icon">
+                        <div class="pru-manage"><span class="span0">PRUManage</span></div>
+                    </a>
+                </div>
+
+                <div class="navigation-list">
+                    <div class="navigation-item">
+
+                        <img class="x-icon1" src="./Asset/MyWealth White Icon.png" alt="myWealth Icon" />
+                        <!-- <div class="x-icon1"></div> -->
+                        <a href="./wealth.html" class="navigation-link">My Wealth</a>
+                    </div>
+                    <div class="navigation-item">
+                        <img class="x-icon2"src="./Asset/MyCover White Icon.png" alt="myCover Icon">
+                        <a href="./cover.html" class="navigation-link">My Cover</a>
+                    </div>
+                    <div class="navigation-item">
+                        <img class="x-icon3" src="./Asset/MyCredit White Icon.png" alt="myCredit Icon">
+                        <a href="./credit.html" class="navigation-link">My Credit</a>
+                    </div>
+                    <div class="navigation-item">
+                        <img class="x-icon4" src="./Asset/MyPath White Icon.png" alt="myPath Icon">
+                        <a href="./path.html" class="navigation-link">My Path</a>
+                    </div>
+
+                </div>
+
+
+            </div>
+        
+        </div>
+
+        <div class="mywealth-page">
+            <div class="column mainpage">
+                <div class="mainpage mainpagetitle">
+                    <h1 class="mywealth-title">Welcome to MyWealth page!</h1>
+                    <p class="mywealthsubparagraph">Gain a clear sight about you financial health</p>
+                    
+                </div>
+                <div class="mainpage buttongroup">
+                    <label for="file-input" class="file-label">
+                        <span>Choose File</span>
+                        <input type="file" id="file-input" accept=".xlsx, .xls">
+                    </label>
+                    <!-- <input type="file" value="Upload" class="file-input" accept=".xlsx, .xls"> -->
+  
+                    <div class="dropdownlist active">
+                        <label for="header-select">
+                            <span>Select Option:</span>
+                            <span class="arrow"></span>
+                        </label>
+                        <select id="header-select"></select>
+                    </div>
+                    <div class="dropdownlist active">
+                        <label for="index-select">
+                            <span>Select range:</span>
+                            <span class="arrow"></span>
+                        </label>
+                        <select id="index-select"></select>
+                    </div>
+
+                </div>
+                <div class="mainpage mywealthcard-1">
+                    <div class="total-asset">Total Asset</div>
+                        <!-- <img class="mywealth-line-graph" src="./Asset/Line_Graph@2x.png" alt="Line Graph"> -->
+                    <div id="line-chart-container"></div>
+
+                
+                </div>
+            </div>
+
+            <div class="column assettitle-compo">
+                <div class="column asset-compo-chart1">
+                    <div class="asset-compo">Asset Composition</div>
+                    <div id="pie-chart-container"></div>
+                        <!-- <img class="assetcompo-graph1" src="./Asset/Pie_Chart@2x.png" alt="Pie Chart1"> -->
+
+                </div>
+                <div class="column asset-compo-chart2">
+                    <div class="asset-compo">Disposable Income & Inflow Outflow</div>
+                    <div id="combo-chart-container"></div>
+                    <!-- <div class="pyAsset">
+                        <img class="assetcompo-graph2" src="./Asset/Pie_Chart_b@2x.png" alt="Pie Chart2">
+                    </div> -->
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+    
+    <script src="script.js"></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>
+    
+</body>
+</html>
