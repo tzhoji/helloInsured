@@ -13,17 +13,17 @@ menu_icon.onclick=function(){
 
 // To hover different navigation link
 const xIcons = [
-    { element: document.querySelector('.x-icon1'), file: './Asset/MyWealth White Icon.png' },
-    { element: document.querySelector('.x-icon2'), file: './Asset/MyCover White Icon.png' },
-    { element: document.querySelector('.x-icon3'), file: './Asset/MyCredit White Icon.png' },
-    { element: document.querySelector('.x-icon4'), file: './Asset/MyPath White Icon.png' }
+    { element: document.querySelector('.x-icon1'), file: './MyWealth White Icon.png' },
+    { element: document.querySelector('.x-icon2'), file: './MyCover White Icon.png' },
+    { element: document.querySelector('.x-icon3'), file: './MyCredit White Icon.png' },
+    { element: document.querySelector('.x-icon4'), file: './MyPath White Icon.png' }
   ];
 
 const yIcons = [
-    { element: document.querySelector('.x-icon1'), file: './Asset/MyWealth Black Icon.png' },
-    { element: document.querySelector('.x-icon2'), file: './Asset/MyCover Black Icon.png' },
-    { element: document.querySelector('.x-icon3'), file: './Asset/MyCredit Black Icon.png' },
-    { element: document.querySelector('.x-icon4'), file: './Asset/MyPath Black Icon.png' }
+    { element: document.querySelector('.x-icon1'), file: './MyWealth Black Icon.png' },
+    { element: document.querySelector('.x-icon2'), file: './MyCover Black Icon.png' },
+    { element: document.querySelector('.x-icon3'), file: './MyCredit Black Icon.png' },
+    { element: document.querySelector('.x-icon4'), file: './MyPath Black Icon.png' }
   ];
 
 for (let i=0;i<navItems.length;i++){
