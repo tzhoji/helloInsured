@@ -41,7 +41,7 @@ body {
     background-color: rgba(0,0,0,1.0);
     display: flex;
     flex-direction: column;
-    padding:26px 15px;
+    /* padding:26px 15px; */
     row-gap:100px;
     justify-content: top;
     align-items: center;
@@ -93,6 +93,10 @@ body {
 
 
 /* PRUMANAGE MAIN PAGE ICON */
+
+.navigation-header{
+    padding-top:20px;
+}
 .prumanage-icon{
     height:28px;
     object-fit: cover;
@@ -114,8 +118,8 @@ body {
     flex-direction: row;
     gap:30px;
     height:36px;
-    margin-left:13px;
-    min-width:175px;
+    margin-left:10px;
+    /* min-width:175px; */
 }
 
 /* SUBLINK */
@@ -132,16 +136,18 @@ body {
 .navigation-item {
     position: relative;
     display:flex;
-    justify-content: center;
+    /* justify-content: flex-start; */
     column-gap: 30px;
     padding:10px 40px;
     cursor: pointer;
+    align-self:flex-start;
     
 }
 
 .navigation-link {
     display:block;
-
+    /* align-items: left; */
+ 
 }
 
 .navigation-item a{
@@ -149,21 +155,26 @@ body {
     font-family: 'Open Sans';
     font-size: 25px;
     text-decoration: none;
+    /* align-items: left; */
+    /* margin-left: 30px; */
     
 }
-.navigation-item:hover {
+.navigation-item:hover,.navigation-link:hover {
     background-color: #eee;
+    color: rgb(0, 0, 0);
     border-radius: 10px;
 }   
 
 
 .navigation-item a:hover {
-    display:block;
-    
+    /* display:block; */
+    color: rgb(0, 0, 0);
+   
 }
 .x-icon1,.x-icon2,.x-icon3,.x-icon4{
     object-fit:cover;
     width:31px;
+    align-items:left;
 }
 
 /* Get MyWealth page attributes */
@@ -691,3 +702,161 @@ h3{
     width:550px;
     height:600px;
 }
+
+
+/* Path page */
+
+.mypath-page {
+    position: relative;
+    bottom:8px;
+    left: -22.5rem;
+    width: 100wh;
+    height: 100%;
+    /* padding: 20px; */
+    transition: 0.3s;
+
+
+}
+
+.img-container{
+    position:relative;
+    display:inline-block;
+}
+
+
+.img5{  
+    z-index: 1;
+    width: 85%; 
+    height: 85%;
+}
+
+.pin1{
+    position:absolute;
+    top:33%;
+    left:-10%;
+    transform:translate(-20%,-20%);
+    pointer-events:auto;
+    cursor:pointer;
+    scale:50%;
+}
+
+.pin2 {
+    position: absolute;
+    top: 33%;
+    left: 16%;
+    transform: translate(-20%, -20%);
+    pointer-events: auto;
+    cursor: pointer;
+    scale: 50%;
+}
+
+.pin3 {
+    position: absolute;
+    top: 6%;
+    left: 40%;
+    transform: translate(-20%, -20%);
+    pointer-events: auto;
+    cursor: pointer;
+    scale: 50%;
+}
+
+.pin4 {
+    position: absolute;
+    top: -20%;
+    left: 30%;
+    transform: translate(-20%, -20%);
+    pointer-events: auto;
+    cursor: pointer;
+    scale: 50%;
+}
+
+.textcontainer{
+    display:flex;
+    flex-direction:column;
+    position: absolute;
+    top: 20%;
+    left: 50%;
+}
+.textpin{
+
+    transform:translate(-50%,-50%);
+    font-family: 'Open Sans';
+    font-weight: 700;
+    font-size: 25px;
+    text-align: center;
+    /* order:1; */
+}
+
+.pinimage1{
+    position: absolute;
+    top: 25%;
+    left: 32%;
+    scale:30%;
+    transform: translate(-50%, -50%)
+}
+
+.active.mypath-page {
+    left: -1.9rem;
+    pointer-events: fill;
+    transition: 0.3s;
+}
+
+.message-box {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 9999;
+    
+}
+
+.message-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.message-content h2 {
+
+    margin-bottom:10px;
+    text-align: center;
+    color: rgb(0, 0, 0);
+    font-family: 'Open Sans';
+    font-weight: 800;
+    font-size: 25px;
+}
+
+.message-content img {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+    /* scale:70%; */
+
+}
+
+.message-content p {
+
+    text-align: justify;
+    text-justify: inter-word;
+    color: rgb(0, 0, 0);
+    font-family: 'Open Sans';
+    font-weight: 300;
+    font-size: 15px;
+}
+
