@@ -11,7 +11,11 @@ const pinimage = document.querySelector(".pinimage");
 
 const pinimages = document.querySelectorAll(".pinimage");
 const messageBox = document.getElementById("messageBox");
+const bottommessageBox = document.getElementById("bottommessageBox");
+
 const closeButton = document.getElementById("closeButton");
+const bottomclickbutton = document.querySelector(".bottomclick");
+const bottomcloseButton = document.getElementById("bottomcloseButton");
 
 // To shrink the navigation bar
 menu_icon.onclick = function () {
@@ -135,32 +139,60 @@ closeButton.addEventListener("click", function () {
   messageBox.style.display = "none";
 });
 
-// pinimageB.addEventListener("mouseover", function () {
-//   pinimageB.src = activepinimage;
-//   pinimageB.style.transform = "translateY(-20px)";
-// });
+const displaydescription = [
+  {
+    title: "Total Asset: ",
+    description:
+      "Total assets refer to the sum of all tangible and intangible possessions owned by an individual, company, or institution, including cash, properties, investments, and equipment.",
+  },
 
-// pinimageB.addEventListener("mouseout", function () {
-//   pinimageB.src = nonactivepinimage;
-//   pinimageB.style.transform = "none";
-// });
+  {
+    title: "Liability: ",
+    description:
+      "A liability represents the financial obligations or debts owed by an individual, company, or institution to other parties, including loans, accounts payable, and accrued expenses.",
+  },
 
-// pinimageC.addEventListener("mouseover", function () {
-//   pinimageC.src = activepinimage;
-//   pinimageC.style.transform = "translateY(-20px)";
-// });
+  {
+    title: "Equity: ",
+    description:
+      "Equity, also known as net worth or shareholders&apos; equity, is the residual interest in the assets of an entity after deducting its liabilities, representing the ownership stake held by shareholders or owners.",
+  },
 
-// pinimageC.addEventListener("mouseout", function () {
-//   pinimageC.src = nonactivepinimage;
-//   pinimageC.style.transform = "none";
-// });
+  {
+    title: "Stock: ",
+    description:
+      "Stock refers to a share or ownership in a company, representing a portion of its equity capital, which entitles the shareholder to claim a part of the company&apos;s profits and assets.",
+  },
 
-// pinimageD.addEventListener("mouseover", function () {
-//   pinimageD.src = activepinimage;
-//   pinimageD.style.transform = "translateY(-20px)";
-// });
+  {
+    title: "Bond: ",
+    description:
+      "A bond is a debt security issued by governments or corporations to raise capital, where the bondholder is essentially lending money to the issuer in exchange for periodic interest payments and the return of the principal amount at maturity.",
+  },
 
-// pinimageD.addEventListener("mouseout", function () {
-//   pinimageD.src = nonactivepinimage;
-//   pinimageD.style.transform = "none";
-// });
+  {
+    title: "Fixed Deposit: ",
+    description:
+      "A fixed deposit (also known as a term deposit) is a financial investment product offered by banks, where an individual deposits a specific amount of money for a predetermined period at a fixed interest rate. At maturity, the principal amount along with the accumulated interest is returned to the depositor. It is a low-risk investment option suitable for those seeking stability and guaranteed returns.",
+  },
+];
+
+function convertToPointsAndBold(data) {
+  const points = data.map(
+    (item) => `<li><strong>${item.title}</strong>${item.description}</li><br>`
+  );
+
+  const list = document.getElementById("pointFormList");
+  list.innerHTML = points.join("");
+}
+
+bottomclickbutton.addEventListener("click", function () {
+  document.querySelector(".bottommessagecontainer h2").textContent =
+    "Information Page";
+  convertToPointsAndBold(displaydescription);
+  bottommessageBox.style.display = "block";
+});
+
+bottomcloseButton.addEventListener("click", function () {
+  bottommessageBox.style.display = "none";
+});

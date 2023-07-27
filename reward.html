@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>TEAM HELLO</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    
+</head>
+<body>
+    <div class="mainwealth-page">
+
+        <div class="navbar">
+
+            <div class="title"></div>
+
+            <!-- sidebar -->
+            <div class="sidebar">
+                <label for="click">
+                    <div class="menu-icon">
+                        <div class="line line-1"></div>
+                        <div class="line line-2"></div>
+                        <div class="line line-3"></div>
+                    </div>
+                </label>
+            </div>
+
+            <!-- navigation -->
+            <div class="navigation">
+                <div class="navigation-header">
+                    <a href="./index.html"> 
+                        <img class="prumanage-icon" src="./PruManage_Icon@2x.png" alt="prumanage-icon">
+                        <div class="pru-manage"><span class="span0">PRUManage</span></div>
+                    </a>
+                </div>
+
+                <div class="navigation-list">
+                    <div class="navigation-item">
+                    
+                        <img class="x-icon1" src="./MyWealth White Icon.png" alt="myWealth Icon" />
+                        <!-- <div class="x-icon1"></div> -->
+                        <a href="./wealth.html" class="navigation-link">My Wealth</a>
+                    </div>
+                    <div class="navigation-item">
+                        <img class="x-icon2" src="./MyCover White Icon.png" alt="myCover Icon">
+                        <a href="./cover.html" class="navigation-link">My Cover</a>
+                    </div>
+                    <div class="navigation-item">
+                        <img class="x-icon3" src="./MyPath White Icon.png" alt="myPath Icon">
+                        <a href="./path.html" class="navigation-link">My Path</a>
+                    </div>
+                    <div class="navigation-item">
+                        <img class="x-icon4" src="./MyCredit White Icon.png" alt="myCredit Icon">
+                        <a href="./reward.html" class="navigation-link">My Reward</a>
+                    </div>
+
+                </div>
+
+
+            </div>
+        
+        </div>
+
+        <div class="myreward-page">
+            <div class="rewardtitle">
+                <h1 class="rewardtitle myreward-title">Welcome to MyReward page!</h1>
+                <p class="rewardtitle myrewardsubparagraph">Import your financial data consistenly and get reward from us</p>
+            
+            </div>
+            
+            <div class="myreward point">
+                <h2 class="rewardpointtitle">My Point</h2>
+                <h1 class="rewardpointvalue">50</h1>
+
+            </div>
+            <div class="cashwallet">
+                <div class="cashwalletheader">
+                    <h1 class="rewardpointtitle">PRUActive Cash Wallet</h1>
+                    <div class="buttoncombine">
+                        <button class="depositbutton">Deposit</button>
+                        <button class="withdrawbutton">Withdraw</button>
+                    </div>
+
+                </div>
+                <img class="cashwalletgraph" src="./cashwallet_chart.png" alt="myPath Icon">
+            </div>
+
+            <div class="redeem-voucher">
+                <h2 class="redeemtitle">Redeem Voucher</h2>
+                <div id="redeem-container"></div>
+            </div>
+
+            <div class="message-box" id="redeemmessageBox">
+                <div class="redeemcontent">
+                    <span class="close-button" id="redeemcloseButton">&times;</span>
+                    <img src="" alt="">
+                    <h2></h2>
+
+                </div>
+            </div>
+
+            <div class="depositmessage-box" id="depositmessageBox" autocomplete="off">
+                <div class="depositcontent">
+                    <span class="close-button" id="depositcloseButton">&times;</span>
+                    <input class="amount-deposit" type="text" autocomplete="off">
+                    <button class="confirm-button">Confirm</button>
+                    
+            
+                </div>
+            </div>
+
+            <div class="withdrawmessage-box" id="withdrawmessageBox" autocomplete="off">
+                <div class="withdrawcontent">
+                    <span class="close-button" id="withdrawcloseButton">&times;</span>
+                    <input class="amount-withdraw" type="text" autocomplete="off">
+                    <button class="confirm-button">Confirm</button>
+            
+            
+                </div>
+            </div>
+
+            
+        </div>
+
+
+
+
+    </div>
+    
+    <script src="script_reward.js"></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>
+    
+</body>
+</html>

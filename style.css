@@ -414,7 +414,7 @@ input[type="file"] {
 
 
 
-.active.mywealth-page{
+.active.mycover-page,.active.navigation,.active.mywealth-page,.active.myreward-page{
     /* position:relative; */
     left:0.5rem;
     /* margin-left:2rem; */
@@ -439,13 +439,13 @@ input[type="file"] {
 
 }
 
-.active.mycover-page{
-    /* position:relative; */
+/* .active.mycover-page{
+
     left:0.5rem;
-    /* margin-left:2rem; */
+
     pointer-events:fill;
     transition:0.5s;
-}
+} */
 
 .mycover {
     background-color: #fbfbfb;
@@ -770,6 +770,38 @@ h3{
     scale: 50%;
 }
 
+.bottombutton {
+    position: absolute;
+    top: 90%;
+    left: 90%;
+    transform: translate(-20%, -20%);
+    pointer-events: auto;
+    cursor: pointer;
+
+
+}
+
+.bottomclick{
+    width:200px;
+    height:40px;
+    color:white;
+    background-color: #f80707;
+    border-width:0;
+    border-radius:10px;
+    cursor: pointer;
+    font-family: 'Open Sans';
+    font-weight: 300;
+    font-size: 15px;
+}
+
+.bottomclick:hover {
+    background-image: linear-gradient(to right, #25aae1, #40e495, #30dd8a, #2bb673);
+    box-shadow: 0 4px 15px 0 rgba(49, 196, 190, 0.75);
+}
+.bottommessage-content li{
+    list-style-type: none;
+}
+
 .textcontainer{
     display:flex;
     flex-direction:column;
@@ -801,7 +833,7 @@ h3{
     transition: 0.3s;
 }
 
-.message-box {
+.message-box,.bottommessagecontainer {
     display: none;
     position: fixed;
     top: 0;
@@ -813,7 +845,7 @@ h3{
     
 }
 
-.message-content {
+.message-content, .bottommessage-content{
     position: absolute;
     top: 50%;
     left: 50%;
@@ -846,6 +878,7 @@ h3{
     display: block;
     margin: 0 auto;
     max-width: 100%;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
     /* scale:70%; */
 
 }
@@ -860,3 +893,284 @@ h3{
     font-size: 15px;
 }
 
+
+/* For page Reward */
+.myreward-page {
+    position: relative;
+    left: -19rem;
+    width: 100%;
+    padding: 10px;
+    transition: 0.5s;
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    grid-template-rows:0.5fr 2fr 3fr 3fr;
+    row-gap: 10px;
+    column-gap: 30px;
+
+}
+
+.rewardtitle {
+
+    grid-row-start: 1;
+    grid-row-end: 2;
+    grid-column-start: 1;
+    grid-column-end: 5;
+    padding-top: 10px;
+    
+    display: flex;
+    flex-direction: column;
+    /* align-items: left; */
+    /* justify-content: left; */
+    /* margin:0; */
+
+
+}
+.rewardtitle .myreward-title {
+
+    color: rgb(0, 0, 0);
+    font-family: 'Open Sans';
+    font-size: 30px;
+
+
+}
+
+.rewardtitle .myrewardsubparagraph {
+
+    color: rgb(0, 0, 0);
+    font-family: 'Open Sans';
+    font-size: 20px;
+    
+}
+
+
+
+.point {
+    margin:0;
+    grid-row-start: 2;
+    grid-row-end: 4;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    margin-top: 10px;
+    height:130px;
+    width:220px;
+    display: flex;
+    flex-direction: column;
+    align-items: space-between;
+    background-color: #eee;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+    border-radius: 10px;
+    /* bottom:20px; */
+}
+
+.rewardpointtitle {
+    padding-left:20px;
+    color: rgb(0, 0, 0);
+    font-family: 'Open Sans';
+    font-size: 20px;
+}
+
+.rewardpointvalue {
+    padding-left: 20px;
+    color: rgb(0, 0, 0);
+    font-family: 'Open Sans';
+    font-size: 30px;
+    text-align: center;
+    /* padding-bottom:20px; */
+}
+
+.cashwallet{
+   position:relative;
+   padding-top:20px;
+    grid-row-start: 3;
+    grid-row-end: 5;
+    grid-column-start: 1;
+    grid-column-end: 4;
+    margin-bottom:10px;
+    background-color: #eee;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+    border-radius: 10px;
+    padding-right: 20px;
+    display:flex;
+    flex-direction: column;
+
+}
+
+.cashwalletheader {
+    position: relative;
+    display: flex;
+    flex-direction:row;
+    justify-content: space-between;
+    gap:20px;
+    align-items: center;
+
+}
+
+.depositbutton,.withdrawbutton {
+    width: 100px;
+    height: 40px;
+    color: white;
+    background-color: #f80707;
+    border-width: 0;
+    border-radius: 10px;
+    cursor: pointer;
+    font-family: 'Open Sans';
+    font-weight: 300;
+    font-size: 15px;
+}
+
+.depositbutton:hover,.withdrawbutton:hover, .voucher-item button:hover{
+    background-image: linear-gradient(to right, #25aae1, #40e495, #30dd8a, #2bb673);
+    box-shadow: 0 4px 15px 0 rgba(49, 196, 190, 0.75);
+}
+
+.redeem-voucher {
+    position: relative;
+    padding-top: 10px;
+    grid-row-start: 3;
+    grid-row-end: 5;
+    grid-column-start: 4;
+    grid-column-end: 6;
+    margin-bottom: 10px;
+    background-color: #eee;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+    border-radius: 10px;
+    padding-right: 20px;
+
+}
+
+.redeemtitle {
+    padding-left:20px;
+    padding-left: 20px;
+    color: rgb(0, 0, 0);
+    font-family: 'Open Sans';
+    font-size: 20px;
+
+}
+
+
+.redeemtitle {
+    color: rgb(0, 0, 0);
+    font-family: 'Open Sans';
+    font-weight: 600;
+    font-size: 20px;
+    margin-left: 15px;
+    margin-top: 10px;
+}
+
+.voucher-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 15px;
+    margin-right: 15px;
+    margin-bottom: 5px;
+    padding: 5px;
+    height: 50px;
+    border-bottom: 1px solid rgb(153, 150, 150);
+    row-gap: 20px;
+    
+}
+
+.voucheritem {
+    font-size: 15px;
+    order: 1;
+    margin-left: 15px;
+}
+
+.voucherprice {
+    /* position:relative; */
+    /* margin-right:3px; */
+    font-size: 12px;
+    order: 2;
+    position: absolute;
+    left: 60%
+}
+
+
+
+
+.voucher-item button {
+    font-weight: 400;
+    font-size: 15px;
+    cursor: pointer;
+    background-color: #f80707;
+    color:white;
+    border: none;
+    width:100px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    order: 4;
+}
+
+.cashwalletgraph{
+    align-items: center;
+    margin-bottom:40px;
+    scale:80%;
+}
+
+
+.redeemcontent {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+.redeemcontent img{
+        display: block;
+        margin-top:0px;
+        padding-top:0;
+        max-width: 80%;
+        scale: 50%;
+
+}
+.redeemcontent h2{
+    text-align: center;
+}
+
+.depositmessage-box,.withdrawmessage-box {
+    position: absolute;
+    transform: translateY(300px) translateX(550px);
+    /* transform: translateX(400px); */
+    display: none;
+    /* flex-direction:column; */
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+    z-index: 1;
+}
+
+/* .depositmessage-box .amount-deposit {
+    width:300px;
+    background-color: #fff;
+} */
+
+.depositmessage-box .confirm-button {
+    font-weight: 400;
+        font-size: 15px;
+        cursor: pointer;
+        background-color: #07f888;
+        color: white;
+        border: none;
+        width: 100px;
+        padding: 5px 10px;
+        border-radius: 5px;
+        order: 4;
+}
+
+.withdrawmessage-box .confirm-button {
+    font-weight: 400;
+    font-size: 15px;
+    cursor: pointer;
+    background-color: #f807f4;
+    color: white;
+    border: none;
+    width: 100px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    order: 4;
+}
