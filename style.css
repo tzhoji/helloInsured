@@ -828,7 +828,7 @@ h3{
 }
 
 .active.mypath-page {
-    left: -1.9rem;
+    left: -0.9rem;
     pointer-events: fill;
     transition: 0.3s;
 }
@@ -1149,7 +1149,7 @@ h3{
     background-color: #fff;
 } */
 
-.depositmessage-box .confirm-button {
+.depositmessage-box .deposit-confirm-button {
     font-weight: 400;
         font-size: 15px;
         cursor: pointer;
@@ -1162,7 +1162,7 @@ h3{
         order: 4;
 }
 
-.withdrawmessage-box .confirm-button {
+.withdrawmessage-box .withdraw-confirm-button {
     font-weight: 400;
     font-size: 15px;
     cursor: pointer;
@@ -1173,4 +1173,9 @@ h3{
     padding: 5px 10px;
     border-radius: 5px;
     order: 4;
+}
+
+.cashwallet #linechartcashwallet{
+   padding-top:10px;
+   padding-left: 30px;
 }

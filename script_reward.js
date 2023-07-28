@@ -118,11 +118,13 @@ const depositButton = document.querySelector(".depositbutton");
 const withdrawButton = document.querySelector(".withdrawbutton");
 const depositMessageBox = document.getElementById("depositmessageBox");
 const depositCloseButton = document.getElementById("depositcloseButton");
-const depositConfirmButton = document.querySelector(".confirm-button");
+const depositConfirmButton = document.querySelector(".deposit-confirm-button");
 const depositInput = document.querySelector(".amount-deposit");
 const withdrawMessageBox = document.getElementById("withdrawmessageBox");
 const withdrawCloseButton = document.getElementById("withdrawcloseButton");
-const withdrawConfirmButton = document.querySelector(".confirm-button");
+const withdrawConfirmButton = document.querySelector(
+  ".withdraw-confirm-button"
+);
 const withdrawInput = document.querySelector(".amount-withdraw");
 
 function showDepositMessageBox() {
@@ -154,8 +156,25 @@ depositCloseButton.addEventListener("click", function () {
 });
 
 depositConfirmButton.addEventListener("click", function () {
-  const depositAmount = depositInput.value;
+  const depositAmount = parseFloat(depositInput.value);
 
+  // Calculate the new amountwallet value for the current month
+  const lastMonthValue = amountwallet[amountwallet.length - 1];
+  const newAmountValue = lastMonthValue + depositAmount;
+
+  // Add the current month's data to the dateList array
+  const currentDate = new Date();
+  const currentMonthYear = currentDate.toLocaleString("default", {
+    month: "long",
+    year: "numeric",
+  });
+  dateList.push(currentMonthYear);
+
+  // Add the new amountwallet value to the amountwallet array
+  amountwallet.push(newAmountValue);
+
+  // Redraw the line chart with the updated data
+  drawLineChart(dateList, amountwallet);
   hideDepositMessageBox();
 });
 
@@ -164,7 +183,101 @@ withdrawCloseButton.addEventListener("click", function () {
 });
 
 withdrawConfirmButton.addEventListener("click", function () {
-  const withdrawAmount = withdrawInput.value;
+  const withdrawAmount = parseFloat(withdrawInput.value);
+
+  // Calculate the new amountwallet value for the current month
+  const lastMonthValue = amountwallet[amountwallet.length - 1];
+  const newAmountValue = lastMonthValue - withdrawAmount;
+
+  // Add the current month's data to the dateList array
+  const currentDate = new Date();
+  const currentMonthYear = currentDate.toLocaleString("default", {
+    month: "long",
+    year: "numeric",
+  });
+  dateList.push(currentMonthYear);
+
+  // Add the new amountwallet value to the amountwallet array
+  amountwallet.push(newAmountValue);
+
+  // Redraw the line chart with the updated data
+  drawLineChart(dateList, amountwallet);
 
   hideWithdrawMessageBox();
 });
+
+function generateDateList() {
+  const startDate = new Date(2022, 9); // October is month 9 (0-indexed)
+  const endDate = new Date(2023, 5); // June is month 5 (0-indexed)
+  const dateList = [];
+
+  let currentDate = startDate;
+  while (currentDate <= endDate) {
+    const year = currentDate.getFullYear();
+    const month = currentDate.toLocaleString("default", { month: "long" });
+    dateList.push(`${month} ${year}`);
+    currentDate.setMonth(currentDate.getMonth() + 1); // Increment by one month
+  }
+
+  return dateList;
+}
+
+const dateList = generateDateList();
+const amountwallet = [0, 2.5, 5, 7.5, 10, 12.5, 15, 17.5, 20];
+
+function drawLineChart(x_val, y_val) {
+  const trace = {
+    x: x_val,
+    y: y_val,
+    type: "line",
+    line: {
+      color: "rgb(128,128,255)",
+    },
+  };
+
+  const layout = {
+    title: `Cash Wallet Amount`,
+    xaxis: {
+      // title: "Month-Year",
+      // showline: true,
+      zeroline: true,
+      linewidth: 2,
+      linecolor: "black",
+      tickangle: 90,
+      font: {
+        size: 10,
+      },
+    },
+    yaxis: {
+      title: `Cash Wallet Amount ($)`,
+      // showline: true,
+      zeroline: true,
+      rangemode: "tozero",
+      linewidth: 2,
+      linecolor: "black",
+    },
+    hovermode: "closest",
+    width: 750,
+    height: 420,
+    autosize: true,
+    automargin: true,
+    xanchor: "center",
+    yanchor: "center",
+    margin: {
+      l: 80,
+      b: 120,
+      t: 50,
+      r: 120,
+    },
+  };
+
+  const config = {
+    responsive: true,
+    showEditInChartStudio: true,
+    plotlyServerURL: "https://chart-studio.plotly.com",
+  };
+
+  const chartContainer = document.getElementById("linechartcashwallet");
+  Plotly.newPlot(chartContainer, [trace], layout, config);
+}
+drawLineChart(dateList, amountwallet);
